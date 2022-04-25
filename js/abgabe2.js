@@ -87,5 +87,5 @@ function abstandBerechnen() {
         coords.push(item.geometry.coordinates);
     });
 
-    //pointToArray(geojson.geometry.coordinates, coords, ergebnis2);
+    console.log(berechneDistanz(7.595876025644574, 51.969011917421255, 7.595725, 51.969422));
 }

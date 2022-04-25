@@ -15,30 +15,6 @@ ergebnis1.forEach((item) => {
 });
 
 /**
- * Berechnet die Abstände von einem Punkt zu einem Array.
- * @param {*} p Punkt
- * @param {*} a Array
- * @param {*} div Ausgabediv
- */
-function pointToArray(p, a, div) {
-    // Führt für jeden Eintrag im Array die Funktion berechneDistanz aus.
-    var ergebnis1 = [];
-    a.forEach((item) => {
-        ergebnis1.push(berechneDistanz(p[0], p[1], item[0], item[1]));
-    });
-
-    // Sortiert das ergebnis1array.
-    ergebnis1.sort(function (a, b) {
-        return a - b;
-    });
-    div.innerHTML = '';
-    // Gibt das ergebnis1 im HTML aus.
-    ergebnis1.forEach((item) => {
-        div.innerHTML += item + 'm<br>';
-    });
-}
-
-/**
  * Berechnung der Distanz zwischen zwei Punkten. Die Koordinaten werden in Dezimalzahlen angegeben.
  * @param {*} lon1
  * @param {*} lat1
