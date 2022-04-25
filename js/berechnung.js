@@ -1,17 +1,42 @@
-// Führt für jeden Eintrag in cities die Funktion berechneDistanz aus.
-var ergebnis = [];
+// Führt für jeden Eintrag im Array die Funktion berechneDistanz aus.
+var ergebnis1 = [];
 cities.forEach((item) => {
-    ergebnis.push(berechneDistanz(point[0], point[1], item[0], item[1]));
+    ergebnis1.push(berechneDistanz(point[0], point[1], item[0], item[1]));
 });
 
-// Sortiert das Ergebnisarray.
-ergebnis.sort(function (a, b) {
+// Sortiert das ergebnis1array.
+ergebnis1.sort(function (a, b) {
     return a - b;
 });
-// Gibt das Ergebnis im HTML aus.
-ergebnis.forEach((item) => {
-    document.getElementById('ergebnis').innerHTML += item + 'm<br>';
+document.getElementById('ergebnis1').innerHTML = '';
+// Gibt das ergebnis1 im HTML aus.
+ergebnis1.forEach((item) => {
+    document.getElementById('ergebnis1').innerHTML += item + 'm<br>';
 });
+
+/**
+ * Berechnet die Abstände von einem Punkt zu einem Array.
+ * @param {*} p Punkt
+ * @param {*} a Array
+ * @param {*} div Ausgabediv
+ */
+function pointToArray(p, a, div) {
+    // Führt für jeden Eintrag im Array die Funktion berechneDistanz aus.
+    var ergebnis1 = [];
+    a.forEach((item) => {
+        ergebnis1.push(berechneDistanz(p[0], p[1], item[0], item[1]));
+    });
+
+    // Sortiert das ergebnis1array.
+    ergebnis1.sort(function (a, b) {
+        return a - b;
+    });
+    div.innerHTML = '';
+    // Gibt das ergebnis1 im HTML aus.
+    ergebnis1.forEach((item) => {
+        div.innerHTML += item + 'm<br>';
+    });
+}
 
 /**
  * Berechnung der Distanz zwischen zwei Punkten. Die Koordinaten werden in Dezimalzahlen angegeben.
