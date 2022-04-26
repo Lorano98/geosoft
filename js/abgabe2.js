@@ -58,6 +58,7 @@ function abstandBerechnen() {
     let geojson = JSON.parse(textareaGeoJSON.value);
 
     // Führt für jeden Eintrag im Array die Funktion berechneDistanz aus.
+    // Speichert ein Array mit [Distanz, Name].
     var ergebnis2 = [];
     poi.features.forEach((item) => {
         ergebnis2.push([
@@ -71,14 +72,12 @@ function abstandBerechnen() {
         ]);
     });
 
-    console.log(ergebnis2);
-
-    // Sortiert das ergebnis1array.
+    // Sortiert das ergebnisarray.
     ergebnis2.sort(function (a, b) {
         return a[0] > b[0];
     });
     document.getElementById('ergebnis2').innerHTML = '';
-    // Gibt das ergebnis1 im HTML aus.
+    // Gibt das ergebnis im HTML aus.
     ergebnis2.forEach((item) => {
         document.getElementById('ergebnis2').innerHTML += item[1] + ': ' + item[0] + 'm<br>';
     });
@@ -86,6 +85,4 @@ function abstandBerechnen() {
     poi.features.forEach((item) => {
         coords.push(item.geometry.coordinates);
     });
-
-    console.log(berechneDistanz(7.595876025644574, 51.969011917421255, 7.595725, 51.969422));
 }
