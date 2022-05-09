@@ -52,6 +52,6 @@ class Bushaltestelle {
      * @returns
      */
     printInfos() {
-        return this.nr + ' ' + this.lbez + ' ' + this.richtung + ': ';
+        return this.nr + ' ' + this.lbez + ' ' + this.richtung;
     }
 }
