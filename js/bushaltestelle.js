@@ -1,4 +1,17 @@
+// define a class Bushaltestelle with its constructor
+/**
+ * @class
+ */
 class Bushaltestelle {
+    /**
+     * attributes from the api
+     * @param {*} nr
+     * @param {*} typ
+     * @param {*} lbez
+     * @param {*} kbez
+     * @param {*} richtung
+     * @param {*} geometry
+     */
     constructor(nr, typ, lbez, kbez, richtung, geometry) {
         this.nr = nr;
         this.typ = typ;
@@ -8,6 +21,11 @@ class Bushaltestelle {
         this.geometry = geometry;
     }
 
+    /**
+     * Berechnet die Distanz von einem Punkt zu dieser Bushaltestelle
+     * @param {*} point
+     * @returns distanz
+     */
     berechneDistanz(point) {
         let lon1 = this.geometry.coordinates[0];
         let lat1 = this.geometry.coordinates[1];
@@ -29,6 +47,10 @@ class Bushaltestelle {
         return d;
     }
 
+    /**
+     * Gibt die Attribute des Objektes aus
+     * @returns
+     */
     printInfos() {
         return this.nr + ' ' + this.lbez + ' ' + this.richtung + ': ';
     }
