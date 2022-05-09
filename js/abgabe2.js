@@ -14,7 +14,7 @@ meta2.setAttribute('content', 'This is my cool website');
 var textareaGeoJSON = document.getElementById('geojson');
 textareaGeoJSON.value = '';
 
-var standort = document.getElementById('standort');
+var standort = document.getElementById('standort1');
 standort.addEventListener('click', () => ermittlePosition());
 var abstand = document.getElementById('abstand');
 abstand.addEventListener('click', () => abstandBerechnen());
