@@ -25,9 +25,7 @@ function naechsteBushaltestellen() {
  * @param {*} position
  */
 function standortSetzen(position) {
-    standort = [];
-    standort.push(position.coords.longitude);
-    standort.push(position.coords.latitude);
+    standort = [position.coords.longitude, position.coords.latitude];
 
     let x = new XMLHttpRequest();
     // Funktion, die ausgeführt wird, sobald die Daten geladen sind
@@ -71,7 +69,7 @@ function showNearbyPlaces(res) {
         return a.berechneDistanz(standort) > b.berechneDistanz(standort);
     });
 
-    // Ausgabe im ContentDiv
+    // Ausgabe im Div
     busse.forEach((item) => {
         contentDiv.innerHTML += item.printInfos() + ': ' + item.berechneDistanz(standort).toFixed(2) + 'm<br>';
     });
@@ -112,8 +110,6 @@ function showNearbyFahrten(res) {
     if (res.length == 0) {
         fahrtDiv.innerHTML += 'Keine Abfahrten in den nächsten 5 Minuten.';
     } else {
-        console.log(res);
-
         res.forEach((item) => {
             fahrtDiv.innerHTML +=
                 'Linie ' +
