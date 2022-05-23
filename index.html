@@ -6,15 +6,27 @@
         <script src="js/point.js"></script>
         <script src="js/poi.js"></script>
         <script src="js/bushaltestelle.js"></script>
-        <script src="css/main.css"></script>
+        <link rel="stylesheet" href="css/main.css">
         <title>Abgabe 1</title>
 
         <!--Leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" ntegrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+        <!--Draw-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+
+        <!--Turf.js-->
+        <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
     </head>
 
     <body style="font-family: Arial, Helvetica, sans-serif;">
+        <p>
+            <h1>Abgabe 4</h1>
+            <button id="reset" onClick="loadBushaltestellen()">Bushaltestellen neu laden</button><br><br>
+            <div id="map"></div>
+        </p>
         <p>
             <h1>Abgabe 1</h1>
             <div id="ergebnis1"></div>
@@ -32,10 +44,6 @@
             <div id="naechsteFahrt"></div>
             <div id="content"></div>
             
-        </p>
-        <p>
-            <h1>Abgabe 4</h1>
-            <div id="map"></div>
         </p>
         
     </body>
