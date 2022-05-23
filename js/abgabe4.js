@@ -59,8 +59,6 @@ map.on(L.Draw.Event.DRAWSTART, function (e) {
     }
 });
 
-loadBushaltestellen();
-
 // Standortabfrage
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -68,6 +66,7 @@ if (navigator.geolocation) {
         // Standortarray wird umgedreht, da lat und lon vertauscht sind
         // Standort wird auf der Karte eingefügt
         L.marker(standort.reverse(), { zIndexOffset: 1000 }).addTo(map).bindPopup('Dein Standort');
+        loadBushaltestellen();
     });
 } else {
     window.alert('Ihr Browser unterstützt keine Geolocation.');
@@ -94,8 +93,12 @@ function loadBushaltestellen() {
                 data.features.forEach((item) => {
                     let c = item.geometry.coordinates;
                     let p = item.properties;
+
+                    let d = Math.round(berechneDistanz(c[1], c[0], standort[0], standort[1]));
                     // Popup
-                    let popupText = item.properties.lbez + (p.richtung == undefined ? '' : ' ' + p.richtung);
+                    let popupText =
+                        item.properties.lbez +
+                        (p.richtung == undefined ? '' : ' ' + p.richtung + '<br>Distanz: ' + d + 'm');
                     // Speichern der Bushaltestellenmarker und hinzufügen zur Karte
                     bushaltestellenMarker.push(
                         L.marker([c[1], c[0]], { icon: haltestellenIcon, zIndexOffset: -1000 })
