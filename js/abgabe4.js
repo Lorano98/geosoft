@@ -98,7 +98,10 @@ function loadBushaltestellen() {
                     // Popup
                     let popupText =
                         item.properties.lbez +
-                        (p.richtung == undefined ? '' : ' ' + p.richtung + '<br>Distanz: ' + d + 'm');
+                        (p.richtung == undefined ? '' : ' ' + p.richtung) +
+                        '<br>Distanz: ' +
+                        d +
+                        'm';
                     // Speichern der Bushaltestellenmarker und hinzufügen zur Karte
                     bushaltestellenMarker.push(
                         L.marker([c[1], c[0]], { icon: haltestellenIcon, zIndexOffset: -1000 })
