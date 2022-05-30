@@ -5,14 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="js/cities.js"></script>
-        <script src="js/point.js"></script>
-        <script src="js/poi.js"></script>
-        <script src="js/bushaltestelle.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/abgabe5.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <title>Abgabe 5</title>
+        <title>Haltestellen</title>
 
         <!--Leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
@@ -24,6 +20,7 @@
 
         <!--Turf.js-->
         <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
     </head>
 
     <body style="font-family: Arial, Helvetica, sans-serif;" class="d-flex flex-column min-vh-100">
@@ -38,22 +35,28 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="distancePOI.html">Distanzrechner</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="haltestelleFilter.html">Haltestellen</a>
+                    <a class="nav-link active" aria-current="page" href="haltestelleFilter.html">Haltestellen</a>
                   </li>
                 </ul>
               </div>
             </div>
         </nav>
-        <p>
-            Willkommen auf meiner Seite!<br>
-            Das ist die Startseite.
-        </p>
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-xs-12">
+                <div id="map"></div>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+                <button id="reset" onClick="loadBushaltestellen()">Bushaltestellen neu laden</button><br><br>
+            </div>
+        </div>
+        
         
 
         <footer class="bg-light text-center text-lg-start mt-auto">
@@ -72,6 +75,8 @@
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="js/abgabe1.js"></script>
+        <script src="js/abgabe4.js"></script>
     </body>
 
 </html>

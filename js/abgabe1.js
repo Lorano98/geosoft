@@ -1,3 +1,4 @@
+/*
 // Führt für jeden Eintrag im Array die Funktion berechneDistanz aus.
 var ergebnis1 = [];
 cities.forEach((item) => {
@@ -13,7 +14,7 @@ document.getElementById('ergebnis1').innerHTML = '';
 ergebnis1.forEach((item) => {
     document.getElementById('ergebnis1').innerHTML += item + 'm<br>';
 });
-
+*/
 /**
  * Berechnung der Distanz zwischen zwei Punkten. Die Koordinaten werden in Dezimalzahlen angegeben.
  * @param {*} lon1

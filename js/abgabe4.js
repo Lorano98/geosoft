@@ -1,6 +1,3 @@
-//Setzen des Titels
-document.title = 'Abgabe 4';
-
 var bushaltestellenMarker = [];
 var rec = null;
 

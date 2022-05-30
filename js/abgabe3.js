@@ -1,6 +1,3 @@
-//Setzen des Titels
-document.title = 'Abgabe 3';
-
 // Eigener Standort
 var standort = [];
 // Array von Bushaltestelle Objekten

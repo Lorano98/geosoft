@@ -1,3 +1,16 @@
 #map { 
     height: 600px; 
 }
+
+body{
+    padding:10px
+}
+
+nav{
+    margin-bottom: 5px;
+}
+
+button{
+    max-width: 300px;
+    margin: 5px 0px !important;
+}
