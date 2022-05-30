@@ -1,6 +1,3 @@
-//Setzen des Titels
-document.title = 'Abgabe 2';
-
 // Metadaten setzen
 var meta1 = document.createElement('meta');
 meta1.setAttribute('name', 'author');
